@@ -13,6 +13,7 @@ public interface BookingListService {
 	List<BookingListGNViewModel> getAllBookingByFlightId(int id);
 	List<BookingListGNViewModel> getAllBookingByFlightCode(String id);
 	List<BookingListGNViewModel> getAllBookingByPassengerId(int id);
+	List<BookingListGNViewModel> getAllBooking();
 	default boolean pattern(String type, String val){
 		switch (type){
 			case "mobileNumber":{
@@ -24,4 +25,5 @@ public interface BookingListService {
 		}
 		return false;
 	}
+
 }

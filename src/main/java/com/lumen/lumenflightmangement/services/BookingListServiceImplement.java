@@ -30,7 +30,7 @@ public class BookingListServiceImplement implements BookingListService {
 		this.bookingListRepository = bookingListRepository;
 		this.logger = LoggerFactory.getLogger(this.getClass().getName());
 
-		System.out.println( (this.bookingListRepository.findAll().stream().map(this::toViewModel).collect(Collectors.toList())).toString() +"   voo\n\n");
+//		System.out.println( (this.bookingListRepository.findAll().stream().map(this::toViewModel).collect(Collectors.toList())).toString() +"   voo\n\n");
 	}
 
 	@Override
@@ -62,6 +62,15 @@ public class BookingListServiceImplement implements BookingListService {
 	public List<BookingListGNViewModel> getAllBookingByPassengerId(int id) {
 		return  filterDataType(2,id);
 	}
+
+	@Override
+	public List<BookingListGNViewModel> getAllBooking() {
+		return bookingListRepository.findAll()
+				.stream()
+				.map(this::toViewModel)
+				.toList();
+	}
+
 	//	private helper method for our usage
 	private BookingListGNViewModel toViewModel(BookingList entity){
 		BookingListGNViewModel viewModel = new BookingListGNViewModel();

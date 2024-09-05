@@ -58,11 +58,11 @@ public class ApplicationExceptionHandlerAdvice {
 		logger.warn(e.getMessage());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error",e.getMessage()));
 	}
-//	@ExceptionHandler(.class)
-//	public ResponseEntity<?> handlerInvalidEmailIdFormatException( e){
-//		logger.warn(e.getMessage());
-//		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error",e.getMessage()));
-//	}
+	@ExceptionHandler(java.sql.SQLException.class)
+	public ResponseEntity<?> handlerJavaSqlSQLException(java.sql.SQLException e){
+		logger.warn(e.getMessage());
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error",e.getMessage()));
+	}
 //	@ExceptionHandler(.class)
 //	public ResponseEntity<?> handlerInvalidEmailIdFormatException( e){
 //		logger.warn(e.getMessage());

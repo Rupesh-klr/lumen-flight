@@ -5,6 +5,7 @@ import com.lumen.lumenflightmangement.viewmodels.PassengerListCreateViewModel;
 import com.lumen.lumenflightmangement.viewmodels.PassengerListGNViewModel;
 import com.lumen.lumenflightmangement.viewmodels.PassengerListUpdateViewModel;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -22,6 +23,10 @@ public interface PassengerListService {
 			case "email":{
 				String pat= "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"+ "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
 				return Pattern.matches(pat,val);
+			}
+			case "localDateTimeGreaterThan":{
+				LocalDateTime ty = LocalDateTime.now();
+				return ty.isAfter(LocalDateTime.now());
 			}
 		}
 		return false;

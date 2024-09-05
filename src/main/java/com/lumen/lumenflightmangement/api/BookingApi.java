@@ -26,6 +26,10 @@ public class BookingApi {
 		System.out.println("createBooking "+ viewModel);
 		return ResponseEntity.ok(bookingListService.createBooking(viewModel) );
 	}
+	@GetMapping
+	public ResponseEntity<List <BookingListGNViewModel> >  getAllBooking(){
+		return ResponseEntity.ok(bookingListService.getAllBooking() );
+	}
 	@GetMapping("id/{id}")
 	public ResponseEntity<List <BookingListGNViewModel> >  getAllBookingByFlightId(@PathVariable int id){
 		return ResponseEntity.ok(bookingListService.getAllBookingByFlightId(id) );

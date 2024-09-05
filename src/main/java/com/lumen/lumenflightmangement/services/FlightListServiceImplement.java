@@ -1,6 +1,7 @@
 package com.lumen.lumenflightmangement.services;
 
 import com.lumen.lumenflightmangement.exceptions.RecordNotFoundException;
+import com.lumen.lumenflightmangement.exceptions.RequestNotValidException;
 import com.lumen.lumenflightmangement.models.FlightList;
 import com.lumen.lumenflightmangement.models.PassengerList;
 import com.lumen.lumenflightmangement.repositories.FlightListRepository;
@@ -26,6 +27,8 @@ public class FlightListServiceImplement implements FlightListService {
 
 	@Override
 	public FlightListGNViewModel createNewFlightList(FlightListCreateViewModel viewModel) {
+		if(pattern("localDateTimeGreaterThan",viewModel.getDateAndTimeOfFight().toString()))
+			throw new RequestNotValidException("");
 		return  toViewModel( flightListRepository.saveAndFlush(toEntity(viewModel)) );
 	}
 

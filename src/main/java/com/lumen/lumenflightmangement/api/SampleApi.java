@@ -1,16 +1,18 @@
 package com.lumen.lumenflightmangement.api;
 
+import com.lumen.lumenflightmangement.models.ResObj;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+//@CrossOrigin(origins = "http://127.0.0.1:5500")
 @RestController
-@RequestMapping("api/v1/sample")
+//@RequestMapping( value = "/api/v1/sample", produces = MediaType.APPLICATION_JSON_VALUE )
+@RequestMapping( "api/v1/sample")
 public class SampleApi {
 	@GetMapping
-	public ResponseEntity<String> getTestingApi(){
-		System.out.println("testing sample to api.");
-		return ResponseEntity.ok("sample message.");
+	public ResponseEntity<ResObj> getTestingApi(){
+		ResObj resObj = new ResObj( "hello world!.");
+		return ResponseEntity.ok(resObj);
 	}
 }

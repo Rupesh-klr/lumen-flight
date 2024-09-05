@@ -8,8 +8,6 @@ public class BookingList {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-//	private int flightId;
-//	private int customerId;
 	private int seatNumber;
 
 	@ManyToOne

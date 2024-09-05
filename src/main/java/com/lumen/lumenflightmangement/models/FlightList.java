@@ -19,7 +19,7 @@ public class FlightList {
 
 	@ManyToMany
 	@JoinTable(
-			name = "booking_list",
+			name = "flight_passenger_booking",
 			joinColumns = @JoinColumn(name = "flightId"),
 			inverseJoinColumns = @JoinColumn(name = "customerId"))
 	private Set<PassengerList> myPassengerBooking;
