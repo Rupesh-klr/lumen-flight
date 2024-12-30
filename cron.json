@@ -1,8 +1,0 @@
-{
-  "jobs": [
-    {
-      "command": "java -jar myapp.jar",
-      "schedule": "0 0 * * *"
-    }
-  ]
-}
