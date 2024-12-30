@@ -1,0 +1,12 @@
+{
+  "build": {
+    "before_deploy": [
+      "./mvnw -DskipTests clean install"
+    ]
+  },
+  "deploy": {
+    "start": [
+      "./mvnw spring-boot:run"
+    ]
+  }
+}
