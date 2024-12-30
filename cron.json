@@ -1,7 +1,8 @@
 {
   "jobs": [
     {
-      "command": "0 7 * * * /bin/send-newsletter"
+      "command": "java -jar myapp.jar",
+      "schedule": "0 0 * * *"
     }
   ]
 }
