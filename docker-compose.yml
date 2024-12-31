@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - ${PORT:-8090}:${PORT:-8090}
+    environment:
+      - NODE_ENV=production
+      - PORT=${PORT:-8090}
+    entrypoint: ["/bin/sh", "/app/entrypoint.sh"]
