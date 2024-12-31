@@ -1,0 +1,24 @@
+{
+  "name": "Sample Next.js",
+  "description": "Supeshhhinf",
+  "logo": "https://raw.githubusercontent.com/Scalingo/sample-nextjs-standalone/master/public/next.svg",
+  "repository": "https://github.com/rupeshklr1/lumen-flight",
+  "ref": "main",
+  "website": "https://scalingo.com",
+  "formation": {
+    "web": {
+      "amount": 1,
+      "size": "S"
+    }
+  },
+  "build": {
+    "before_deploy": [
+      "./mvnw clean install"
+    ]
+  },
+  "deploy": {
+    "start": [
+      "./mvnw spring-boot:run"
+    ]
+  }
+}

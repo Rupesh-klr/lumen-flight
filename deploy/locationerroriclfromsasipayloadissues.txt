@@ -1,0 +1,62 @@
+post
+https://sasi-test4.rke-odc-test.corp.intranet/inventory/v1/arm/devices
+
+{
+    "resourceType": "Device",
+    "name": "STPLMNHBOL5-010133.04C",
+    "type": "Calix E7",
+    "subType": "Calix E7-2",
+    "status": "Planned",
+    "functionalStatus": "Not Monitored",
+    "clli": "STPLMNHBOL5",
+    "alias": "STPLMNHBOL5",
+    "description": "ECN XGS-PON OLT WMS;6393580 JOB;P.226277 WFMT;F.3040420 LXESPI6 12/5/24",
+    "roles": [
+        {
+            "role": "DSLAM"
+        }
+    ],
+    "installedAt": {
+        "name": "J0016074",
+        "type": "Location"
+    },
+    "relativeName": "P2847",
+    "attributes": [
+        {
+            "name": "IsDiverse",
+            "value": "No"
+        },
+        {
+            "name": "SHARED_DEDICATED",
+            "value": "Dedicated"
+        },
+        {
+            "name": "ManagementIPSubnetMask",
+            "value": "255.255.255.254"
+        },
+        {
+            "name": "defaultGateway",
+            "value": "10.155.231.20"
+        },
+        {
+            "name": "snmpPortId",
+            "value": "161"
+        },
+        {
+            "name": "OffnetIndicator",
+            "value": "NO"
+        },
+        {
+            "name": "AFFILIATE_OWNER",
+            "value": "LOCAL"
+        },
+        {
+            "name": "RELAYRACKID",
+            "value": "010133.04C"
+        },
+        {
+            "name": "NETWORKNAME",
+            "value": "ENWDCOABNA001"
+        }
+    ]
+}
